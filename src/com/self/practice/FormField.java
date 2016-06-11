@@ -13,7 +13,7 @@
  * Created on Oct 19, 2015
  * Updated on $Date$
  */
-package com.rakuten.practice;
+package com.self.practice;
 
 /**
  * @author suresh.gupta

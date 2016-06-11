@@ -13,7 +13,7 @@
  * Created on Dec 28, 2015
  * Updated on $Date$
  */
-package com.rakuten.practice;
+package com.self.practice;
 
 import java.util.ArrayList;
 import java.util.List;

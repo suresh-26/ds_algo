@@ -103,9 +103,4 @@ public class Hello {
         }
 
     }
-
-    public static void createMember(){
-        abstract void doxyz();
-        
-    }
 }
