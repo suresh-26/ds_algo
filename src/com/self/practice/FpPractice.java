@@ -25,6 +25,10 @@ public class FpPractice {
     public static void main(String[] args) {
         FpPractice fpPractice = new FpPractice();
         fpPractice.checkLambdaScope();
+
+        String a = null;
+        String b = null;
+        System.out.println(a.equals(b));
     }
 
     public void checkLambdaScope() {

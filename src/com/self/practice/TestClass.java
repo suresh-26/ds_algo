@@ -16,7 +16,9 @@
 package com.self.practice;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
@@ -31,7 +33,14 @@ public class TestClass {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         // testForEach();
-        checkTokenizer("abc" + "," + "def");
+        // checkTokenizer("abc" + "," + "def");
+        Queue<String> queue = new LinkedList<>();
+        queue.add("one");
+        queue.add("two");
+        queue.add("three");
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
     }
 
     static void testForEach() {

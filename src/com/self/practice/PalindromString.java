@@ -15,40 +15,80 @@
  */
 package com.self.practice;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author suresh.gupta
  *
  */
 public class PalindromString {
 
-    private static String palStr = "asdbadabxytatjhmanamooo";
+    private static String palStr = "gadsbcfmamkldklopolkdlk";
+    // private static String palStr = "asmamjhrajar";
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        String str = "afsjfhak\\rad";
-        System.out.println(str);
-        String pattern = "\\\\r";
-        String updated = str.replaceAll(pattern, "");
-        System.out.println(updated);
-
+        System.out.println(getLongestPalindrome(palStr));
+        Queue<String> queue = new LinkedList<String>();
+        queue.add(palStr);
+        computeLargestSubString(queue);
     }
-    /*
-     * static Map<String, Integer> findPalindrome(String palindromStr) {
-     * char[] chArrForward = palindromStr.toCharArray();
-     * char[] charArrBackWard = palindromStr.toCharArray();
-     * int j = 0;
-     * int l = charArrBackWard.length - 1;
-     * int count = 0;
-     * String palStrFound = null;
-     * for (int i = 0; i < charArrBackWard.length; i++) {
-     * if (charArrBackWard[l--] == chArrForward[j++]) {
-     * count++;
-     * }
-     * }
-     * }
-     */
 
+    private static String getLongestPalindrome(String str) {
+        char[] currentPalindrome = new char[str.length()];
+        char[] longestPalindrome = new char[str.length()];
+        int currentPalLenght = 0;
+        int largestPalLength = 0;
+        boolean seqStarted = false;
+        char[] strArr = str.toCharArray();
+        for (int i = 0; i < strArr.length; i++) {
+            int l = i;
+            for (int j = strArr.length - 1; j >= i; j--) {
+                if (strArr[l] == strArr[j]) {
+                    currentPalindrome[currentPalLenght++] = strArr[l++];
+                    seqStarted = true;
+                } else {
+                    if (currentPalLenght > largestPalLength) {
+                        largestPalLength = currentPalLenght;
+                        longestPalindrome = currentPalindrome;
+                        currentPalLenght = 0;
+                        currentPalindrome = new char[str.length()];
+                        seqStarted = true;
+                        break;
+                    }
+                    if (seqStarted) {
+                        seqStarted = true;
+                        break;
+                    }
+                }
+            }
+
+        }
+        return String.valueOf(longestPalindrome);
+    }
+
+    public static void computeLargestSubString(final Queue<String> queue) {
+        String stringToprocess = queue.poll();
+        if (checkPalindrome(stringToprocess)) {
+            System.out.println(stringToprocess);
+        } else {
+            queue.add(stringToprocess.substring(1));
+            queue.add(stringToprocess.substring(0, stringToprocess.length() - 1));
+            computeLargestSubString(queue);
+        }
+    }
+
+    private static boolean checkPalindrome(String s) {
+        boolean result = false;
+        if (s.length() <= 1)
+            return true;
+        if (s.charAt(0) == s.charAt(s.length() - 1))
+            result = checkPalindrome(s.substring(1, s.length() - 1));
+        else
+            return false;
+        return result;
+    }
 }
