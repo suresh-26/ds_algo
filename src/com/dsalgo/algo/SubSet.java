@@ -12,16 +12,26 @@ public class SubSet {
         intList.add(15);
         intList.add(18);
         intList.add(5);
-        System.out.println(getSubSetSize(intList));
+
+        List<List<Integer>> sets = getSubSetSize(intList);
+        for(List<Integer> set: sets){
+            System.out.println("=====New Set===========");
+            for(int i: set){
+                System.out.print(" "+i);
+            }
+            System.out.println();
+        }
+
+        //System.out.println(getSubSetSize(intList));
 
     }
 
-    private static int getSubSetSize(List<Integer> intList) {
+    private static List<List<Integer>> getSubSetSize(List<Integer> intList) {
         int largestSize = 0;
-        List<Integer> validSet = new ArrayList<>();
+        List<List<Integer>> validSets = new ArrayList<>();
         for (int i = 0; i < intList.size(); i++) {
             int size = 1;
-            validSet = new ArrayList<>();
+            List<Integer> validSet = new ArrayList<>();
             validSet.add(i);
             for (int j = 0; j < intList.size(); j++) {
                 if (i != j) {
@@ -34,8 +44,10 @@ public class SubSet {
             if (largestSize < size) {
                 largestSize = size;
             }
+            validSets.add(validSet);
         }
-        return largestSize;
+        System.out.println(largestSize);
+        return validSets;
     }
 
     private static boolean verifyRule(List<Integer> subSet, int nextInt) {
