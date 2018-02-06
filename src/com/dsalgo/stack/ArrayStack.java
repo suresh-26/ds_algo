@@ -19,8 +19,7 @@ public class ArrayStack {
         if (top + 1 >= size) {
             System.out.println("stack size exceeded");
         } else {
-            top++;
-            elements[top] = val;
+            elements[++top] = val;
         }
     }
 
