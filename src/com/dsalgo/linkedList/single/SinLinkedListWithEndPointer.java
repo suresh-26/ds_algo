@@ -22,7 +22,7 @@ import java.util.Set;
  * @author suresh.gupta
  *
  */
-class SinLinkedListWithEndPointer extends SingleLinkedList {
+public class SinLinkedListWithEndPointer extends SingleLinkedList {
     protected Node start;
     protected Node end;
     public int size;

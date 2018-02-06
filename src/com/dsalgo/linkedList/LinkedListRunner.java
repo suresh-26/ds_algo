@@ -13,8 +13,11 @@
  * Created on Jan 16, 2016
  * Updated on $Date$
  */
-package com.dsalgo.linkedList.single;
+package com.dsalgo.linkedList;
 
+import com.dsalgo.linkedList.doubly.DoubleLinkedList;
+import com.dsalgo.linkedList.single.SingleLinkedList;
+import com.dsalgo.linkedList.single.SinLinkedListWithEndPointer;
 import java.util.Scanner;
 
 /**
@@ -31,7 +34,8 @@ public class LinkedListRunner
         
         //reverseList();
         //SinLinkedListWithEndPointer list = new SinLinkedListWithEndPointer();
-        SingleLinkedList list = new SingleLinkedList();
+        //SingleLinkedList list = new SingleLinkedList();
+        DoubleLinkedList list = new DoubleLinkedList();
         linkedListFromUserInput(list);
     }
 

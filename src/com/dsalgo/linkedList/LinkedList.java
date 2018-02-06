@@ -1,4 +1,4 @@
-package com.dsalgo.linkedList.single;
+package com.dsalgo.linkedList;
 
 public interface LinkedList {
     public void insertAtStart(int val);

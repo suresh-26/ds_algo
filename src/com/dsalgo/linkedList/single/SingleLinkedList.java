@@ -1,5 +1,7 @@
 package com.dsalgo.linkedList.single;
 
+import com.dsalgo.linkedList.LinkedList;
+
 public class SingleLinkedList implements LinkedList {
     protected Node start;
     public int size;
@@ -24,10 +26,8 @@ public class SingleLinkedList implements LinkedList {
 
         if (start == null) {
             start = newNode;
-            size++;
         } else if (start.getLink() == null) {
             start.setLink(newNode);
-            size++;
         } else {
             Node endNode = null;
             Node nxtNode = start.getLink();
@@ -36,9 +36,8 @@ public class SingleLinkedList implements LinkedList {
                 nxtNode = endNode.getLink();
             }
             endNode.setLink(newNode);
-            size += 1;
         }
-
+            size++;
     }
 
     public void insertAtPos(int val, int position) {
