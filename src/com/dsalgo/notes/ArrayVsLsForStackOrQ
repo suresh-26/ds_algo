@@ -1,0 +1,32 @@
+There are multiple different ways to implement queues and stacks with linked lists and arrays, and I'm not sure which ones you're looking for. Before analyzing any of these structures, though, let's review some important runtime considerations for the above data structures.
+
+In a singly-linked list with just a head pointer, the cost to prepend a value is O(1) - we simply create the new element, wire its pointer to point to the old head of the list, then update the head pointer. The cost to delete the first element is also O(1), which is done by updating the head pointer to point to the element after the current head, then freeing the memory for the old head (if explicit memory management is performed). However, the constant factors in these O(1) terms may be high due to the expense of dynamic allocations. The memory overhead of the linked list is usually O(n) total extra memory due to the storage of an extra pointer in each element.
+
+In a dynamic array, we can access any element in O(1) time. We can also append an element in amortized O(1), meaning that the total time for n insertions is O(n), though the actual time bounds on any insertion may be much worse. Typically, dynamic arrays are implemented by having most insertions take O(1) by appending into preallocated space, but having a small number of insertions run in Θ(n) time by doubling the array capacity and copying elements over. There are techniques to try to reduce this by allocating extra space and lazily copying the elements over (see this data structure, for example). Typically, the memory usage of a dynamic array is quite good - when the array is completely full, for example, there is only O(1) extra overhead - though right after the array has doubled in size there may be O(n) unused elements allocated in the array. Because allocations are infrequent and accesses are fast, dynamic arrays are usually faster than linked lists.
+
+Now, let's think about how to implement a stack and a queue using a linked list or dynamic array. There are many ways to do this, so I will assume that you are using the following implementations:
+
+Stack:
+Linked list: As a singly-linked list with a head pointer.
+Array: As a dynamic array
+Queue:
+Linked list: As a singly-linked list with a head and tail pointer.
+Array: As a circular buffer backed by an array.
+Let's consider each in turn.
+
+Stack backed by a singly-linked list. Because a singly-linked list supports O(1) time prepend and delete-first, the cost to push or pop into a linked-list-backed stack is also O(1) worst-case. However, each new element added requires a new allocation, and allocations can be expensive compared to other operations.
+
+Stack backed by a dynamic array. Pushing onto the stack can be implemented by appending a new element to the dynamic array, which takes amortized O(1) time and worst-case O(n) time. Popping from the stack can be implemented by just removing the last element, which runs in worst-case O(1) (or amortized O(1) if you want to try to reclaim unused space). In other words, the most common implementation has best-case O(1) push and pop, worst-case O(n) push and O(1) pop, and amortized O(1) push and O(1) pop.
+
+Queue backed by a singly-linked list. Enqueuing into the linked list can be implemented by appending to the back of the singly-linked list, which takes worst-case time O(1). Dequeuing can be implemented by removing the first element, which also takes worst-case time O(1). This also requires a new allocation per enqueue, which may be slow.
+
+Queue backed by a growing circular buffer. Enqueuing into the circular buffer works by inserting something at the next free position in the circular buffer. This works by growing the array if necessary, then inserting the new element. Using a similar analysis for the dynamic array, this takes best-case time O(1), worst-case time O(n), and amortized time O(1). Dequeuing from the buffer works by removing the first element of the circular buffer, which takes time O(1) in the worst case.
+
+To summarize, all of the structures support pushing and popping n elements in O(n) time. The linked list versions have better worst-case behavior, but may have a worse overall runtime because of the number of allocations performed. The array versions are slower in the worst-case, but have better overall performance if the time per operation isn't too important.
+
+Another option you may want to look into for implementing stacks is the VList, a recent data structure that is a hybrid of a linked list and a dynamic array. It makes fewer allocations than a linked list and has fewer pointers in it, though the space usage is a bit higher in the worst case. You might also want to look into chunklists, which are another hybrid of arrays and linked lists, that can be used for both stacks and queues.
+
+Hope this helps!
+
+Source -- https://stackoverflow.com/questions/7477181/array-based-vs-list-based-stacks-and-queues
+
