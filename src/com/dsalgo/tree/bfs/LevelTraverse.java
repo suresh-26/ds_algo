@@ -1,4 +1,4 @@
-package com.dsalgo.tree.bst;
+package com.dsalgo.tree.bfs;
 
 import java.util.LinkedList;
 import java.util.List;

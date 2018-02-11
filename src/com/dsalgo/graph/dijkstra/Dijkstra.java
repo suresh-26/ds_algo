@@ -1,4 +1,4 @@
-package com.dsalgo.dijkstra;
+package com.dsalgo.graph.dijkstra;
 
 import java.io.File;
 import java.util.Scanner;

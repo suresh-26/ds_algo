@@ -1,4 +1,6 @@
-package com.dsalgo.tree.bst;
+package com.dsalgo.tree;
+
+import com.dsalgo.tree.bst.BinarySearchTree;
 
 public class BSTRunner {
     // Test program

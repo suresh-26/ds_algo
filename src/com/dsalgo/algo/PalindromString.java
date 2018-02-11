@@ -13,7 +13,7 @@
  * Created on Jan 9, 2016
  * Updated on $Date$
  */
-package com.self.practice;
+package com.dsalgo.algo;
 
 import java.util.LinkedList;
 import java.util.Queue;

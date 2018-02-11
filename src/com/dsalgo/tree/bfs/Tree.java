@@ -1,4 +1,4 @@
-package com.dsalgo.tree.bst;
+package com.dsalgo.tree.bfs;
 
 public class Tree {
     public Node root;

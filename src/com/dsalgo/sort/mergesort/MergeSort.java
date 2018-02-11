@@ -1,4 +1,4 @@
-package com.dsalgo.recursion.sorting;
+package com.dsalgo.sort.mergesort;
 
 import java.util.Arrays;
 

@@ -1,9 +1,9 @@
-package com.dsalgo.recursion.tree;
+package com.dsalgo.tree;
 
 import com.dsalgo.tree.bst.BinarySearchTree;
 import com.dsalgo.tree.bst.BinaryNode;
 
-public class Traverse {
+public class BSTChecker {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

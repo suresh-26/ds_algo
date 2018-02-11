@@ -11,14 +11,14 @@ public class BinarySearch {
 		Integer[] newArr = Arrays.copyOfRange(arr, 4, 8);
 
 		//System.out.println(binarySearch(arr, 11));
-//        System.out.println(binary(arr, 1));
-//        System.out.println(binary(arr, 2));
-//        System.out.println(binary(arr, 4));
-//        System.out.println(binary(arr, 6));
-//        System.out.println(binary(arr, 8));
-//        System.out.println(binary(arr, 9));
-//        System.out.println(binary(arr, 10));
-//        System.out.println(binary(arr, 0));
+//        System.out.println(bst(arr, 1));
+//        System.out.println(bst(arr, 2));
+//        System.out.println(bst(arr, 4));
+//        System.out.println(bst(arr, 6));
+//        System.out.println(bst(arr, 8));
+//        System.out.println(bst(arr, 9));
+//        System.out.println(bst(arr, 10));
+//        System.out.println(bst(arr, 0));
 
 	}
 

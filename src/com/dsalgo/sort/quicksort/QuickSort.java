@@ -1,4 +1,4 @@
-package com.dsalgo.quicksort;
+package com.dsalgo.sort.quicksort;
 
 import java.io.File;
 import java.io.FileNotFoundException;
