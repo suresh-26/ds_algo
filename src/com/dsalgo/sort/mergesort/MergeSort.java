@@ -3,7 +3,6 @@ package com.dsalgo.sort.mergesort;
 import java.util.Arrays;
 
 public class MergeSort {
-    int[] sortedArr = new int[4];
     public static void main(String[] args) {
         int[] arr = { 5, 2, 3, 7, 1 };
         int[] sortedArr = new MergeSort().mergeSort(arr, 0, arr.length -1 );
@@ -73,6 +72,7 @@ public class MergeSort {
         int i = 0;
         int j = start;
         int k = midIndex + 1;
+        int l = start;
         int[] sortedArr = new int[(end-start)+1];
         while(j <= midIndex && k <= end){
             if(arr[j] <= arr[k]){
@@ -87,7 +87,6 @@ public class MergeSort {
         while(k <= end){
             sortedArr[i++] = arr[k++];
         }
-        int l = start;
         int m = 0;
         while(m < i) {
             arr[l] = sortedArr[m++];
