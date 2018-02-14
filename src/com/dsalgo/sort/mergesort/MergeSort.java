@@ -17,43 +17,43 @@ public class MergeSort {
         // Arrays.stream(sortedArr2).forEach(System.out::println);
     }
 
-    public static int[] mergeSort(int[] arr) {
-        if (arr.length <= 1) {
-            return arr;
-        }
-
-        int midInd = (arr.length) / 2;
-        int[] first = Arrays.copyOfRange(arr, 0, midInd);
-        int[] second = Arrays.copyOfRange(arr, midInd, arr.length);
-        mergeSort(first);
-        mergeSort(second);
-        return merge(first, second, arr);
-    }
-
-    public static int[] merge(int[] first, int[] last, int[] sortedArr) {
-        int i = 0;
-        int k = 0;
-        int j = 0;
-        while (i < first.length && k < last.length) {
-            if (first[i] <= last[k]) {
-                sortedArr[j] = first[i++];
-                System.out.println("i: " + (i - 1) + " k: " + k + " sortedArr[" + j + "] :" + sortedArr[j]);
-            } else {
-                sortedArr[j] = last[k++];
-                System.out.println("i: " + i + " k: " + (k - 1) + " sortedArr[" + j  + "] :" + sortedArr[j]);
-            }
-            j++;
-        }
-        while (i < first.length) {
-            System.out.println("i: " + i + " j: " + j + " sortedArr[" + j + "] :" + first[i]);
-            sortedArr[j++] = first[i++];
-        }
-        while (k < last.length) {
-            System.out.println("i: " + i + " j: " + j + " sortedArr[" + j + "] :" + last[k]);
-            sortedArr[j++] = last[k++];
-        }
-        return sortedArr;
-    }
+//    public static int[] mergeSort(int[] arr) {
+//        if (arr.length <= 1) {
+//            return arr;
+//        }
+//
+//        int midInd = (arr.length) / 2;
+//        int[] first = Arrays.copyOfRange(arr, 0, midInd);
+//        int[] second = Arrays.copyOfRange(arr, midInd, arr.length);
+//        mergeSort(first);
+//        mergeSort(second);
+//        return merge(first, second, arr);
+//    }
+//
+//    public static int[] merge(int[] first, int[] last, int[] sortedArr) {
+//        int i = 0;
+//        int k = 0;
+//        int j = 0;
+//        while (i < first.length && k < last.length) {
+//            if (first[i] <= last[k]) {
+//                sortedArr[j] = first[i++];
+//                System.out.println("i: " + (i - 1) + " k: " + k + " sortedArr[" + j + "] :" + sortedArr[j]);
+//            } else {
+//                sortedArr[j] = last[k++];
+//                System.out.println("i: " + i + " k: " + (k - 1) + " sortedArr[" + j  + "] :" + sortedArr[j]);
+//            }
+//            j++;
+//        }
+//        while (i < first.length) {
+//            System.out.println("i: " + i + " j: " + j + " sortedArr[" + j + "] :" + first[i]);
+//            sortedArr[j++] = first[i++];
+//        }
+//        while (k < last.length) {
+//            System.out.println("i: " + i + " j: " + j + " sortedArr[" + j + "] :" + last[k]);
+//            sortedArr[j++] = last[k++];
+//        }
+//        return sortedArr;
+//    }
 
     public int[] mergeSort(int[] arr, int start, int end) {
         int length = (end - start);
