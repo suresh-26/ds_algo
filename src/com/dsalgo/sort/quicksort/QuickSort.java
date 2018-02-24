@@ -156,10 +156,10 @@ public class QuickSort {
     public static void main( String[] args ) {
         
         //int[] arr = getArrayFromFile();
-        int[] arr = new int[]{6,3,7,2,1,0,5};
+        int[] arr = new int[]{3,1,4,2,7};
         for(int j=0 ; j<=9 ; j++){
         	i++;
-        	 testQsWithStrategy(arr.clone(), PIVOT_AT_RANDOMQ); //162085
+        	 testQsWithStrategy(arr.clone(), PIVOT_ON_FIRST); //162085
         }
 //        testQsWithStrategy(arr.clone(), PIVOT_ON_FIRST); //162085
 //        testQsWithStrategy(arr.clone(), PIVOT_ON_LAST);  //164123
@@ -172,13 +172,13 @@ public class QuickSort {
         currentStrategy = str;
         
         System.out.println( "sorted: " + isSorted( arr ) );
-       // long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
         
         quicksort( arr );
         
         //System.out.println((System.currentTimeMillis() - start));
         System.out.println( "sorted: " + isSorted( arr ) );
-       // System.out.println("comparisons: " + counter);
+        //System.out.println("comparisons: " + counter);
     }
 //    public static int[] getArrayFromFile() {
 //        Scanner s;
