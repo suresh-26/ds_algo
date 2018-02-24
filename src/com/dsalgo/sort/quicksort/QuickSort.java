@@ -155,8 +155,8 @@ public class QuickSort {
      */
     public static void main( String[] args ) {
         
-        int[] arr = getArrayFromFile();
-        //int[] arr = new int[]{1,2,2,4,5};
+        //int[] arr = getArrayFromFile();
+        int[] arr = new int[]{6,3,7,2,1,0,5};
         for(int j=0 ; j<=9 ; j++){
         	i++;
         	 testQsWithStrategy(arr.clone(), PIVOT_AT_RANDOMQ); //162085
@@ -172,31 +172,31 @@ public class QuickSort {
         currentStrategy = str;
         
         System.out.println( "sorted: " + isSorted( arr ) );
-        long start = System.currentTimeMillis();
+       // long start = System.currentTimeMillis();
         
         quicksort( arr );
         
-        System.out.println((System.currentTimeMillis() - start));
+        //System.out.println((System.currentTimeMillis() - start));
         System.out.println( "sorted: " + isSorted( arr ) );
-        System.out.println("comparisons: " + counter);
+       // System.out.println("comparisons: " + counter);
     }
-    public static int[] getArrayFromFile() {
-        Scanner s;
-        ArrayList<Integer> list = null;
-        try {
-            s = new Scanner(new File("C:\\Users\\suresh.gupta\\Desktop\\QuickSort.txt"));
-            list = new ArrayList<Integer>();
-            while (s.hasNext()) {
-                list.add(Integer.parseInt(s.next()));
-            }
-            s.close();
-        } catch (FileNotFoundException ex) {
-           // Logger.getLogger(TestClass.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        int[] inArr = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            inArr[i] = list.get(i);
-        }
-        return inArr;
-    }
+//    public static int[] getArrayFromFile() {
+//        Scanner s;
+//        ArrayList<Integer> list = null;
+//        try {
+//            s = new Scanner(new File("C:\\Users\\suresh.gupta\\Desktop\\QuickSort.txt"));
+//            list = new ArrayList<Integer>();
+//            while (s.hasNext()) {
+//                list.add(Integer.parseInt(s.next()));
+//            }
+//            s.close();
+//        } catch (FileNotFoundException ex) {
+//           // Logger.getLogger(TestClass.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        int[] inArr = new int[list.size()];
+//        for (int i = 0; i < list.size(); i++) {
+//            inArr[i] = list.get(i);
+//        }
+//        return inArr;
+//    }
 }
